@@ -3,29 +3,35 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Calculadora from './pages/calculadora/Calculadora';
 import Home from './pages/home/Home';
-import NovoCadastro from './pages/novoCadastro/novoCadastro';
-import RecuperarSenha from './pages/recuperarSenha/recuperarSenha';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cadastro from './pages/tarefa/Cadastro';
-/* import Login from './pages/login/Login'; */
+import Login from './pages/login/Login';
+import RotaPrivadaLayout from './components/layout/RotaPrivadaLayout';
+import PadraoLayout from './components/layout/PadraoLayout';
+import Perfil from './pages/perfil/Perfil';
 
 function App() {
   return (
     <>
-      <Header nome="Romulo" />
+     {/*  <Header nome="Romulo" /> */}
       <BrowserRouter>
         <Routes>
-          {/* <Route path='/' Component={() => <Login />} /> */}
-          {/* <Route path='/home' Component={Home} /> */}
-          <Route path='/' Component={() => <Home />} />
-          <Route path='/novoCadastro' Component={() => <NovoCadastro />} />
-          <Route path='/recuperarSenha' Component={() => <RecuperarSenha />} />
+          <Route element={<RotaPrivadaLayout/>}>
+            <Route path='/' element={<PadraoLayout>
+              <Home/>
+            </PadraoLayout>} />
+            <Route path='/perfil' element={<PadraoLayout>
+              <Perfil />
+            </PadraoLayout>} />
+          </Route>          
+          
           <Route path='/calculadora' Component={Calculadora} />
           <Route path='/cadastro' Component={Cadastro} />
+          <Route path='/login' Component={() => <Login />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
