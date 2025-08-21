@@ -38,8 +38,12 @@ const Login = () => {
             <label>Senha</label>
             <Password value={usuario.senha} name="senha" onChange={handleChange} />
             <br />
-            <Button label="Entrar" onClick={login} />
+            <Button className="p-button" label="Entrar" onClick={login} />
+
+            <p className="p-button-text" onClick={() => navigate("/cadastro")}>Cadastrar-se</p>
+            <p className="p-button-text" onClick={() => navigate("/recuperar-senha")}>Esqueci minha senha</p>
         </div>
     );
 }
+
 export default Login;

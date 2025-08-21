@@ -5,4 +5,19 @@
     align-items: center;
     height: 100vh;
     background-color: #f2f2f3;
+    gap: 10px;
+}
+
+.p-button {
+    margin-bottom: 25px;
+}
+
+.p-button-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.p-button-text:hover {
+    cursor: pointer;
+    color: rgb(0, 110, 255);
 }
