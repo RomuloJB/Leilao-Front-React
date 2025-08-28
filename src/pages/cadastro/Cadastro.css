@@ -1,0 +1,225 @@
+:root {
+    --bg-page: #f5f7fa;
+    --bg-card: #ffffff;
+    --border: #e1e5eb;
+    --primary: #006eff;
+    --primary-hover: #0055c4;
+    --radius: 10px;
+    --text: #2b2f33;
+    --text-soft: #5d6570;
+    --shadow: 0 4px 12px -2px rgba(0,0,0,0.08);
+    --transition: .18s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, html, #root {
+    height: 100%;
+    background: var(--bg-page);
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    color: var(--text);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 16px;
+}
+
+.card-cadastro {
+    width: 100%;
+    max-width: 420px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 32px 40px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+}
+
+.card-cadastro h1 {
+    font-size: 1.55rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.subtexto {
+    margin: -8px 0 8px;
+    font-size: .9rem;
+    color: var(--text-soft);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--text-soft);
+}
+
+input {
+    padding: 12px 14px;
+    font-size: .95rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,110,255,.15);
+}
+
+.preview {
+    font-size: .8rem;
+    color: var(--text-soft);
+    background: #f0f3f8;
+    padding: 8px 10px;
+    border-radius: 6px;
+    word-break: break-word;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+button,
+.p-button {
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+button:hover,
+.p-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px -4px rgba(0,110,255,.4);
+}
+
+button:active,
+.p-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px -2px rgba(0,110,255,.35);
+}
+
+button.outline {
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+button.outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.lista-tarefas {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.lista-tarefas::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-tarefas::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.lista-tarefas::-webkit-scrollbar-thumb {
+    background: #c9d2dc;
+    border-radius: 20px;
+}
+
+.item-tarefa {
+    background: #f8fafc;
+    border: 1px solid #e5e9ef;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: .85rem;
+    line-height: 1.3;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.item-tarefa span.desc {
+    font-weight: 500;
+    color: var(--text);
+}
+
+.item-tarefa span.data {
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--text-soft);
+    white-space: nowrap;
+}
+
+.feedback {
+    font-size: .75rem;
+    color: var(--text-soft);
+    text-align: right;
+    margin-top: -4px;
+}
+
+.empty {
+    font-size: .8rem;
+    text-align: center;
+    padding: 12px;
+    color: var(--text-soft);
+    background: #f0f3f8;
+    border: 1px dashed #c9d2dc;
+    border-radius: 6px;
+}
+
+@media (max-width: 520px) {
+    .card-cadastro {
+        padding: 28px 22px 34px;
+        max-width: 100%;
+    }
+    .actions {
+        flex-direction: column;
+    }
+    button,
+    .p-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
