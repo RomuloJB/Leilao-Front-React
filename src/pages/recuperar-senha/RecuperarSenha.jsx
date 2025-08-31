@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import './RecuperarSenha.css';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
 import AutenticacaoService from "../../services/AutenticacaoService";
 import { useNavigate } from "react-router-dom";
 
@@ -10,13 +8,14 @@ const RecuperarSenha = () => {
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setEmail(e.target.value);
-    };
+    const handleChange = (e) => setEmail(e.target.value);
 
     const recuperarSenha = async () => {
+        if (!email) {
+            alert("Informe o e-mail.");
+            return;
+        }
         try {
-            // Simula chamada ao serviço de recuperação de senha
             await autenticacaoService.recuperarSenha({ email });
             alert("E-mail de recuperação enviado com sucesso!");
             navigate("/login");
@@ -26,15 +25,36 @@ const RecuperarSenha = () => {
         }
     };
 
+    const onEnter = (e) => {
+        if (e.key === 'Enter') recuperarSenha();
+    };
+
     return (
-        <div className="container">
-            <h2>Recuperar Senha</h2>
-            <label>E-mail</label>
-            <InputText value={email} name="email" onChange={handleChange} />
-            <br />
-            <Button label="Enviar Link de Recuperação" onClick={recuperarSenha} />
-            <p className="p-button-text" onClick={() => navigate("/login")}>Voltar ao Login</p>
-        </div>
+        <section className="wrapper-container">
+            <div className="container">
+                <h2>Recuperar Senha</h2>
+                <p>Enviaremos uma mensagem ao email abaixo para que você consiga redefinir sua senha.</p>
+                <label htmlFor="email-recuperacao">E-mail</label>
+                <input
+                    id="email-recuperacao"
+                    type="email"
+                    name="email"
+                    className="input-email"
+                    value={email}
+                    onChange={handleChange}
+                    onKeyDown={onEnter}
+                    placeholder="seuemail@exemplo.com"
+                    autoComplete="email"
+                />
+                <button type="button" className="btn-enviar" onClick={recuperarSenha}>
+                    Enviar Link de Recuperação
+                </button>
+                <div className="txt-voltar">
+                    <span onClick={() => navigate("/login")}>Voltar ao Login</span>
+
+                </div>
+            </div>
+        </section>
     );
 };
 

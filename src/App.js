@@ -13,19 +13,23 @@ import Perfil from './pages/perfil/Perfil';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<RotaPrivadaLayout />}>
-          <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
-          <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
-        </Route>
-        <Route path="/calculadora" element={<PadraoLayout><Calculadora /></PadraoLayout>} />
-        <Route path="/cadastro" element={<PadraoLayout><Cadastro /></PadraoLayout>} />
-        <Route path="/login" element={<PadraoLayout><Login /></PadraoLayout>} />
-        <Route path="/recuperar-senha" element={<PadraoLayout><RecuperarSenha /></PadraoLayout>} />
-      </Routes>
-    </BrowserRouter>
+    <div className="app-shell">
+      <BrowserRouter>
+        <div className="main">
+          <Routes>
+            <Route element={<RotaPrivadaLayout />}>
+              <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
+              <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
+              <Route path="/cadastro" element={<PadraoLayout><Cadastro /></PadraoLayout>} />
+              <Route path="/calculadora" element={<PadraoLayout><Calculadora /></PadraoLayout>} />
+            </Route>
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/recuperar-senha" element={<RecuperarSenha />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </div>
   );
 }
-
 export default App;

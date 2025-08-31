@@ -1,0 +1,11 @@
+:root {
+  --login-bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --border: #e1e5eb;
+  --text: #2b2f33;
+  --text-soft: #6a727c;
+  --primary: #006eff;
+  --primary-hover: #0055c4;
+  --radius: 14px;
+  --transition: .18s ease;
+}

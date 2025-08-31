@@ -8,7 +8,7 @@ const Header = (params) => {
         <>
         
             <div className="header">
-                <h1>Olá, {nome}</h1>
+                <h1>Eu vou fazer um Leilao🎵 {nome}</h1>
             </div>
         </>
     );

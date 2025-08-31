@@ -30,7 +30,7 @@ const Cadastro = () => {
             <input type="text" value={tarefa.descricao} id="descricao" onChange={atualizarValor} /><br /><br />
             <input type="text" id="data" value={tarefa.data} onChange={atualizarValor} /><br /><br />
             <button onClick={cadastrar}>Cadastrar</button><br /><br />
-            <Button label="Submit" />
+            <Button label="Enviar" />
         </>
     );
 }
