@@ -3,6 +3,8 @@ import './Login.css';
 import AutenticacaoService from "../../services/AutenticacaoService";
 import { useNavigate } from "react-router-dom";
 import osmenottiImg from '../../assets/img/osmenotti.jpg';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Login = () => {
     const autenticacaoService = new AutenticacaoService();
@@ -81,6 +83,15 @@ const Login = () => {
                                 autoComplete="current-password"
                                 className="login-input"
                             />
+                            <button
+                                type="button"
+                                className="toggle-password"
+                                onClick={() => setShowSenha((s) => !s)}
+                                aria-label={showSenha ? "Ocultar senha" : "Mostrar senha"}
+                                title={showSenha ? "Ocultar senha" : "Mostrar senha"}
+                            >
+                                {showSenha ? <FaEyeSlash /> : <FaEye />}
+                            </button>
                         </div>
                     </div>
 
@@ -95,7 +106,7 @@ const Login = () => {
 
                     <div className="links">
                         <span onClick={() => navigate("/recuperar-senha")}>Esqueci minha senha</span>
-                        <span onClick={() => navigate("/cadastro")}>Criar conta</span>
+                        <span onClick={() => navigate("/cadastrar-perfil")}>Criar conta</span>
                     </div>
                 </div>
             </div>

@@ -106,6 +106,34 @@
   align-items: center;
 }
 
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 44px;
+  /* espaço para o botão do olho */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.toggle-password:hover {
+  color: #222;
+}
+
 .password-wrapper .login-input {
   padding-right: 46px;
 }

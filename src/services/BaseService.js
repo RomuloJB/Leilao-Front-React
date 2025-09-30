@@ -30,7 +30,6 @@ async inserir(dados){
         } catch (error) {
             console.log(error);
         }
-      
     }
 
 }
