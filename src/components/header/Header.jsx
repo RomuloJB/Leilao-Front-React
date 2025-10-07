@@ -2,13 +2,12 @@ import React from 'react';
 import './Header.css';
 
 //const Header =({nome})=>{
-const Header = (params) => {
-    const {nome, idade} = params;
+const Header = () => {
     return(
         <>
         
             <div className="header">
-                <h1>Eu vou fazer um Leilao🎵 {nome}</h1>
+                <h1>Eu vou fazer um Leilao🎵</h1>
             </div>
         </>
     );

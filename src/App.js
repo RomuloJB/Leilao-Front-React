@@ -1,7 +1,6 @@
 import './App.css';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
 import Calculadora from './pages/calculadora/Calculadora';
+import Categoria from './components/categoria/Categoria';
 import Home from './pages/home/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cadastro from './pages/cadastro/Cadastro';
@@ -21,6 +20,7 @@ function App() {
               <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
               <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
               <Route path="/cadastro" element={<PadraoLayout><Cadastro /></PadraoLayout>} />
+              <Route path="/categoria" element={<PadraoLayout><Categoria/></PadraoLayout>} />
               <Route path="/calculadora" element={<PadraoLayout><Calculadora /></PadraoLayout>} />
             </Route>
 
