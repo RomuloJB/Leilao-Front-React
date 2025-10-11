@@ -8,7 +8,15 @@ const Header = (params) => {
         <>
         
             <div className="header">
-                <h1>Eu vou fazer um Leilao🎵 {nome}</h1>
+                <h1>RM Leilões🔨</h1>
+                <div className="menu-opcoes">
+                    <p>Agenda</p>
+                    <p>Quero vender</p>
+                    <p>Categorias</p>
+                    <p>Quem somos</p>
+                </div>
+
+                <p className="conta">Minha conta</p>
             </div>
         </>
     );

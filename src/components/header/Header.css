@@ -4,10 +4,35 @@
     height: 9vh;
     border: 1px solid #2e2e2e;
     border-radius: 0;   
-    padding: 20px;
+    padding: 20px 60px ;
     color: #fff;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.menu-opcoes {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    font-size: 15px;
+}
+
+.menu-opcoes p {
+    padding: 10px 0;
+}
+
+.menu-opcoes p:hover {
+    cursor: pointer;
+    color: #ff6600;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.conta:hover {
+    cursor: pointer;
+    color: #ff6600;
+    font-weight: bold;
+    text-decoration: underline;
 }
