@@ -1,4 +1,4 @@
-import api from "./api";
+import api from "../configs/axiosConfig";
 
 const LeilaoService = {
   listar: async ({ page = 0, size = 10, search, categoriaId }) => {

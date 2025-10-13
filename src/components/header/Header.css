@@ -30,7 +30,14 @@
     text-decoration: underline;
 }
 
-.conta:hover {
+.opcoes-de-conta {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 15px;
+}
+
+.opcoes-de-conta p:hover {
     cursor: pointer;
     color: #ff6600;
     font-weight: bold;

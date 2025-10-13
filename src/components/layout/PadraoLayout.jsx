@@ -8,7 +8,7 @@ const PadraoLayout = ({ children }) => {
         <>
             <Header />
             {children}
-            <Footer />
+            <Footer/>
         </>
     );
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import './Header.css';
+import {useNavigate} from 'react-router-dom';
 
 //const Header =({nome})=>{
-const Header = (params) => {
-    const {nome, idade} = params;
+const Header = () => {
+    const navigate = useNavigate();
     return(
         <>
         
@@ -16,7 +17,10 @@ const Header = (params) => {
                     <p>Quem somos</p>
                 </div>
 
-                <p className="conta">Minha conta</p>
+                <div className="opcoes-de-conta">
+                    <p onClick={() => navigate(('/login'))}>Login</p>
+                    <p>Minha conta</p>
+                </div>
             </div>
         </>
     );

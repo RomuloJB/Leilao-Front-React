@@ -95,6 +95,11 @@ const Login = () => {
                         </div>
                     </div>
 
+                    <div className="links">
+                        <span onClick={() => navigate("/recuperar-senha")}>Esqueci minha senha</span>
+                        <span onClick={() => navigate("/cadastrar-perfil")}>Criar conta</span>
+                    </div>
+
                     <button
                         type="button"
                         className="login-btn"
@@ -103,11 +108,6 @@ const Login = () => {
                     >
                         {loading ? "Entrando..." : "Entrar"}
                     </button>
-
-                    <div className="links">
-                        <span onClick={() => navigate("/recuperar-senha")}>Esqueci minha senha</span>
-                        <span onClick={() => navigate("/cadastrar-perfil")}>Criar conta</span>
-                    </div>
                 </div>
             </div>
         </div>

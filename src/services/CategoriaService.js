@@ -1,4 +1,4 @@
-import api from "./api";
+import api from "../configs/axiosConfig";
 
 const CategoriaService = {
   listar: async ({ page = 0, size = 10, search }) => {
