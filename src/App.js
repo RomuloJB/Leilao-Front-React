@@ -3,13 +3,13 @@ import Calculadora from './pages/calculadora/Calculadora';
 import Categoria from './components/categoria/Categoria';
 import Home from './pages/home/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Cadastro from './pages/cadastro/Cadastro';
+import CadastrarProduto from './pages/cadastrar-produto/CadastrarProduto';
 import Login from './pages/login/Login';
 import RecuperarSenha from './pages/recuperar-senha/RecuperarSenha';
 import RotaPrivadaLayout from './components/layout/RotaPrivadaLayout';
 import PadraoLayout from './components/layout/PadraoLayout';
 import Perfil from './pages/perfil/Perfil';
-import CadastrarPerfil from './pages/cadastro-perfil/CadastrarPerfil';
+import CadastrarPerfil from './pages/cadastrar-perfil/CadastrarPerfil';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route element={<RotaPrivadaLayout />}>
               <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
               <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
-              <Route path="/cadastro" element={<PadraoLayout><Cadastro /></PadraoLayout>} />
+              <Route path="/cadastrar-produto" element={<PadraoLayout><CadastrarProduto /></PadraoLayout>} />
               <Route path="/categoria" element={<PadraoLayout><Categoria/></PadraoLayout>} />
               <Route path="/calculadora" element={<PadraoLayout><Calculadora /></PadraoLayout>} />
             </Route>

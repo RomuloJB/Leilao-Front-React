@@ -1,0 +1,102 @@
+.cadastrar-produto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cadastrar-produto h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.btn-cadastrar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-cadastrar:hover {
+  background-color: #0056b3;
+}
+
+.mensagem {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.produtos-cadastrados {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.produtos-cadastrados h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.produtos-cadastrados ul {
+  list-style: none;
+  padding: 0;
+}
+
+.produtos-cadastrados li {
+  padding: 8px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.produtos-cadastrados li:last-child {
+  border-bottom: none;
+}
