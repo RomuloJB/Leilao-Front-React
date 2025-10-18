@@ -45,13 +45,8 @@ const Login = () => {
 
     return (
         <div className="login-page">
-            <div className="login-left">
-                <img src={osmenottiImg} alt="Osmenotti" className="login-image" />
-            </div>
-
-            <div className="login-right">
                 <div className="login-card">
-                    <h2>Entrar</h2>
+                    <h2>Login</h2>
                     <p className="subtitle">Informe suas credenciais</p>
 
                     <div className="form-group">
@@ -97,7 +92,7 @@ const Login = () => {
 
                     <div className="links">
                         <span onClick={() => navigate("/recuperar-senha")}>Esqueci minha senha</span>
-                        <span onClick={() => navigate("/cadastrar-perfil")}>Criar conta</span>
+                        <span onClick={() => navigate("/cadastrar-perfil")}>Criar Conta</span>
                     </div>
 
                     <button
@@ -110,7 +105,6 @@ const Login = () => {
                     </button>
                 </div>
             </div>
-        </div>
     );
 };
 

@@ -104,14 +104,3 @@
   color: #1b5e20;
   border: 1px solid #c8e6c9;
 }
-.links {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
-  gap: 10px;
-}
-.links span {
-  color: #1976d2;
-  cursor: pointer;
-  text-decoration: underline;
-}

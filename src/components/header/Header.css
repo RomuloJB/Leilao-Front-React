@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .menu-opcoes {
     display: flex;
     flex-direction: row;

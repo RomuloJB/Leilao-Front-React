@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './RecuperarSenha.css';
-import AutenticacaoService from "../../services/AutenticacaoService";
+import AutenticacaoService from "../../../services/AutenticacaoService";
 import { useNavigate } from "react-router-dom";
 
 const RecuperarSenha = () => {

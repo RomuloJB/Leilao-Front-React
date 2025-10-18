@@ -9,17 +9,17 @@ const Header = () => {
         <>
         
             <div className="header">
-                <h1>RM Leilões🔨</h1>
+                <h1 onClick={() => navigate('/')} className="logo">RM Leilões🔨</h1>
                 <div className="menu-opcoes">
                     <p>Agenda</p>
                     <p>Quero vender</p>
                     <p>Categorias</p>
-                    <p>Quem somos</p>
+                    <p onClick={() => navigate('/quem-somos')}>Quem somos</p>
                 </div>
 
                 <div className="opcoes-de-conta">
                     <p onClick={() => navigate(('/login'))}>Login</p>
-                    <p>Minha conta</p>
+                    <p>Meu perfil</p>
                 </div>
             </div>
         </>
