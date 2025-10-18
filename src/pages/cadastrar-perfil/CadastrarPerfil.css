@@ -1,47 +1,83 @@
+/* Layout principal */
 .cadastrar-perfil {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: #f7f9fc;
-  padding: 20px;
+  display: flex;
+  min-height: 91vh;
+  background: var(--login-bg);
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
 }
+
+/* Card */
 .cadastro-card {
   width: 100%;
-  max-width: 520px;
-  background: #fff;
-  border: 1px solid #e7eaf0;
-  border-radius: 10px;
-  padding: 22px;
-  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
+
 .cadastro-card h2 {
-  margin: 0 0 4px 0;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 650;
+  letter-spacing: .4px;
 }
+
 .subtitle {
-  margin: 0 0 16px 0;
-  color: #6b7280;
+  font-size: 1.1rem;
+  letter-spacing: .4px;
+  color: var(--text-soft);
+  margin: 0 0 5px 0;
 }
+
+/* Form */
 .cadastro-form {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
-.form-group placeholder{
-  color:#adadad;
+.form-group label {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text-soft);
+  margin-bottom: 6px;
 }
 
+/* Inputs */
 .input {
-  padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  outline: none;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font: 400 .9rem system-ui, Arial, sans-serif;
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  box-sizing: border-box;
 }
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0,110,255,.25);
+}
+
+.input::placeholder {
+  color: var(--text-soft);
+  opacity: .85;
+}
+
 .input.error {
   border-color: #e11d48;
   background: #fff5f7;
@@ -50,8 +86,10 @@
   font-size: 12px;
   color: #b91c1c;
 }
+/* Password wrapper */
 .password-wrapper {
   position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -59,48 +97,142 @@
 .password-wrapper .input {
   padding-right: 46px;
 }
-.toggle-password, .toggle-password-conf {
+
+.toggle-password, 
+.toggle-password-conf {
   position: absolute;
   right: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
   color: #555;
-  font-size: 18px;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   padding: 4px;
+  transition: color var(--transition);
 }
 
-.toggle-password:hover, .toggle-password-conf:hover {
+.toggle-password:hover, 
+.toggle-password-conf:hover {
   color: #222;
 }
 
-.cadastro-btn {
-  background: #1976d2;
+/* Botões Container */
+.botoes-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Botão Voltar */
+.cadastro-btn-voltar {
+  flex: 1;
+  padding: 14px 0;
+  justify-content: center;
+  background: #6b7280;
   color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
+  border: 1px solid #6b7280;
+  border-radius: 12px;
   font-weight: 600;
+  letter-spacing: .6px;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
+
+.cadastro-btn-voltar:hover {
+  background: #4b5563;
+  border-color: #4b5563;
+  box-shadow: 0 8px 18px -8px rgba(107,114,128,.45);
+  transform: translateY(-2px);
+}
+
+.cadastro-btn-voltar:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px -4px rgba(107,114,128,.4);
+}
+
+/* Botão Principal */
+.cadastro-btn {
+  flex: 1;
+  padding: 14px 0;
+  justify-content: center;
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: .6px;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.cadastro-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  box-shadow: 0 8px 18px -8px rgba(0,110,255,.45);
+  transform: translateY(-2px);
+}
+
+.cadastro-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px -4px rgba(0,110,255,.4);
+}
+
 .cadastro-btn:disabled {
-  opacity: 0.7;
+  opacity: .6;
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
+/* Alerts */
 .alert {
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
   font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
 }
+
 .alert.error {
   background: #fde8e8;
   color: #991b1b;
   border: 1px solid #fecaca;
 }
+
 .alert.success {
   background: #e7f6ec;
   color: #1b5e20;
   border: 1px solid #c8e6c9;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cadastro-card {
+    max-width: 450px;
+  }
+  
+  .cadastro-card h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .cadastrar-perfil {
+    padding: 20px;
+  }
+  
+  .cadastro-card h2 {
+    font-size: 1.8rem;
+  }
+  
+  .botoes-container {
+    flex-direction: column;
+  }
+  
+  .cadastro-btn-voltar,
+  .cadastro-btn {
+    width: 100%;
+  }
 }

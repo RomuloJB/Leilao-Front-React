@@ -20,6 +20,8 @@ function App() {
           <Routes>
             <Route element={<RotaPrivadaLayout />}>
               <Route path="/login" element={<PadraoLayout><Login/></PadraoLayout>} />
+              <Route path="/cadastrar-perfil" element={<PadraoLayout><CadastrarPerfil /></PadraoLayout>} />
+              <Route path="/recuperar-senha" element={<PadraoLayout><RecuperarSenha /></PadraoLayout>} />
               <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
               <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
               <Route path="/cadastrar-produto" element={<PadraoLayout><CadastrarProduto /></PadraoLayout>} />
@@ -27,8 +29,6 @@ function App() {
               <Route path="/quem-somos" element={<PadraoLayout><QuemSomos/></PadraoLayout>} />
             </Route>
 
-            <Route path="/cadastrar-perfil" element={<CadastrarPerfil />} />
-            <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           </Routes>
         </div>
       </BrowserRouter>

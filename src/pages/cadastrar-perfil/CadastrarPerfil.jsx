@@ -162,12 +162,18 @@ const CadastrarPerfil = () => {
             {errors.confirmarSenha && <span className="field-error">{errors.confirmarSenha}</span>}
           </div>
 
-          <button type="submit" className="cadastro-btn" disabled={loading}>
-            {loading ? "Criando conta..." : "Criar conta"}
-          </button>
-
-          <div className="links">
-            <span onClick={() => navigate(-1)}>Voltar para o login</span>
+          <div className="botoes-container">
+            <button 
+              type="button" 
+              className="cadastro-btn-voltar" 
+              onClick={() => navigate(-1)}
+            >
+              Voltar ao login
+            </button>
+            
+            <button type="submit" className="cadastro-btn" disabled={loading}>
+              {loading ? "Criando conta..." : "Criar conta"}
+            </button>
           </div>
         </form>
       </div>
