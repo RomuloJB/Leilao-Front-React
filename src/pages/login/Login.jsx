@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './Login.css';
 import AutenticacaoService from "../../services/AutenticacaoService";
 import { useNavigate } from "react-router-dom";
-import osmenottiImg from '../../assets/img/osmenotti.jpg';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
