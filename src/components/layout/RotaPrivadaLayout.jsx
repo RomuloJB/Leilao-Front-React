@@ -1,12 +1,14 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
-const RotaPrivadaLayout = () =>{
+const RotaPrivadaLayout = () => {
+    const { isLoggedIn, loading } = useAuth();
 
-    const usuario = localStorage.getItem("usuario")?true:false;
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
 
-    return(
-        usuario?<Outlet/>:<Navigate to="/login" replace/>
-    );
-}
+    return isLoggedIn() ? <Outlet /> : <Navigate to="/login" replace />;
+};
 export default RotaPrivadaLayout;

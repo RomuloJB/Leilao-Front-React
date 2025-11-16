@@ -3,6 +3,7 @@ import './Login.css';
 import AutenticacaoService from "../../services/AutenticacaoService";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useAuth } from "../../contexts/AuthContext";
 
 
 const Login = () => {
@@ -11,6 +12,7 @@ const Login = () => {
     const [loading, setLoading] = useState(false);
     const [showSenha, setShowSenha] = useState(false);
     const navigate = useNavigate();
+    const { login: authLogin } = useAuth();
 
     const handleChange = (e) => {
         setUsuario({ ...usuario, [e.target.name]: e.target.value });
@@ -25,7 +27,7 @@ const Login = () => {
             setLoading(true);
             const resposta = await autenticacaoService.login(usuario);
             if (resposta.status === 200 && resposta.data.token) {
-                localStorage.setItem("usuario", JSON.stringify(resposta.data));
+                authLogin(resposta.data);
                 navigate("/");
             } else {
                 alert("Erro ao fazer login.");

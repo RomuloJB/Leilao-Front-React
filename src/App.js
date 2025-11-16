@@ -10,29 +10,34 @@ import PadraoLayout from './components/layout/PadraoLayout';
 import Perfil from './pages/perfil/Perfil';
 import CadastrarPerfil from './pages/cadastrar-perfil/CadastrarPerfil';
 import QuemSomos from './pages/quem-somos/QuemSomos';
+import { AuthProvider } from './contexts/AuthContext';
 
 
 function App() {
   return (
-    <div className="app-shell">
-      <BrowserRouter>
-        <div className="main">
-          <Routes>
-            <Route element={<RotaPrivadaLayout />}>
+    <AuthProvider>
+      <div className="app-shell">
+        <BrowserRouter>
+          <div className="main">
+            <Routes>
+              {/* Rotas públicas - sem autenticação */}
+              <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
               <Route path="/login" element={<PadraoLayout><Login/></PadraoLayout>} />
               <Route path="/cadastrar-perfil" element={<PadraoLayout><CadastrarPerfil /></PadraoLayout>} />
               <Route path="/recuperar-senha" element={<PadraoLayout><RecuperarSenha /></PadraoLayout>} />
-              <Route path="/" element={<PadraoLayout><Home /></PadraoLayout>} />
-              <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
-              <Route path="/cadastrar-produto" element={<PadraoLayout><CadastrarProduto /></PadraoLayout>} />
-              <Route path="/categoria" element={<PadraoLayout><Categoria/></PadraoLayout>} />
               <Route path="/quem-somos" element={<PadraoLayout><QuemSomos/></PadraoLayout>} />
-            </Route>
-
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </div>
+              
+              {/* Rotas protegidas - requerem autenticação */}
+              <Route element={<RotaPrivadaLayout />}>
+                <Route path="/perfil" element={<PadraoLayout><Perfil /></PadraoLayout>} />
+                <Route path="/cadastrar-produto" element={<PadraoLayout><CadastrarProduto /></PadraoLayout>} />
+                <Route path="/categoria" element={<PadraoLayout><Categoria/></PadraoLayout>} />
+              </Route>
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </div>
+    </AuthProvider>
   );
 }
 export default App;

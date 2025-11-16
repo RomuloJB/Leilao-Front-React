@@ -47,3 +47,201 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+/* Estilos para o dropdown do perfil */
+.perfil-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.perfil-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.perfil-trigger:hover {
+    background-color: #2e2e2e;
+    color: #ff6600;
+}
+
+.user-icon {
+    font-size: 16px;
+}
+
+.chevron {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.chevron.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 220px;
+    background-color: #1e1e1e;
+    border: 1px solid #2e2e2e;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    margin-top: 5px;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.usuario-info {
+    padding: 15px;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.nome-usuario {
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+}
+
+.email-usuario {
+    color: #999;
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #2e2e2e;
+}
+
+.dropdown-item {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background: none;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #2e2e2e;
+    color: #ff6600;
+}
+
+.dropdown-item.sair {
+    border-top: 1px solid #2e2e2e;
+    color: #ff4444;
+}
+
+.dropdown-item.sair:hover {
+    background-color: #ff4444;
+    color: #fff;
+}
+
+/* Estilos para o popup de confirmação */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: popupFadeIn 0.3s ease;
+}
+
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.popup-content h3 {
+    color: #fff;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+}
+
+.popup-content p {
+    color: #ccc;
+    margin: 0 0 25px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-cancelar,
+.btn-confirmar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.btn-cancelar {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+.btn-cancelar:hover {
+    background-color: #3e3e3e;
+}
+
+.btn-confirmar {
+    background-color: #ff4444;
+    color: #fff;
+}
+
+.btn-confirmar:hover {
+    background-color: #ff3333;
+}
